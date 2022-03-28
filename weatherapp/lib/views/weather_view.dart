@@ -11,9 +11,9 @@ class WeatherView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
-          title: const Text(
-            "Weather",
-            style: TextStyle(
+          title: Text(
+            Data.selectedCity!.name,
+            style: const TextStyle(
               color: Colors.white,
             ),
             textAlign: TextAlign.center,
