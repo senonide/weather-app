@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/models/data.dart';
-import 'package:weatherapp/views/weather_view.dart';
+import 'package:weatherapp/repository/data.dart';
+import 'package:weatherapp/view/weather_view.dart';
 
 class CitiesView extends StatelessWidget {
   const CitiesView({Key? key}) : super(key: key);
@@ -9,7 +9,8 @@ class CitiesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0,
+          backgroundColor: const Color.fromARGB(255, 235, 86, 62),
+          elevation: 3,
           leading: IconButton(
             icon: const Icon(
               Icons.settings,

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:weatherapp/apikey.dart';
-import 'package:weatherapp/models/city_weather.dart';
+import 'package:weatherapp/model/city_weather.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherService {

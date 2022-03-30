@@ -1,7 +1,9 @@
-import 'package:weatherapp/models/city.dart';
+import 'package:weatherapp/model/city.dart';
+import 'package:weatherapp/model/city_weather.dart';
 
 class Data {
   static City? selectedCity;
+  static CityWeather? selectedWeather;
   static List<City> cities = [
     City(name: 'Oviedo', lat: 43.3603, long: -5.8448),
     City(name: 'Gijón', lat: 43.53573, long: -5.66152),

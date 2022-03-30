@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/config.dart';
-import 'package:weatherapp/models/data.dart';
-import 'package:weatherapp/services/weather_service.dart';
+import 'package:weatherapp/repository/data.dart';
+import 'package:weatherapp/network/weather_service.dart';
+import 'package:weatherapp/view/detailed_weather_view.dart';
 
 class WeatherView extends StatelessWidget {
   const WeatherView({Key? key}) : super(key: key);
@@ -9,8 +9,10 @@ class WeatherView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          elevation: 0,
+          backgroundColor: const Color.fromARGB(255, 235, 86, 62),
+          elevation: 3,
           title: Text(
             Data.selectedCity!.name,
             style: const TextStyle(
@@ -28,7 +30,7 @@ class WeatherView extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return ListView(
-                      children: getWeather(),
+                      children: getWeather(context),
                     );
                   } else if (snapshot.hasError) {
                     return Text(snapshot.error.toString());
@@ -57,36 +59,41 @@ class WeatherView extends StatelessWidget {
         ));
   }
 
-  List<Widget> getWeather() {
+  List<Widget> getWeather(context) {
     List<Widget> data = [];
     for (int i = 0; i < WeatherService.currentWeather.length; i++) {
       Widget aux = ListTile(
-          leading: Image.network(WeatherService.iconUrl +
-              WeatherService.currentWeather[i].icon +
-              WeatherService.extension),
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).day.toString()} "
-                "- ${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).month.toString()} "
-                "- ${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).year.toString()}",
-                style: TextStyle(
-                    color: Config.mainColor, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                  "${WeatherService.currentWeather[i].mainWeather}, ${WeatherService.currentWeather[i].description}"),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                      "Temperature: ${WeatherService.currentWeather[i].temp}º"),
-                  Text(
-                      "Humidity: ${WeatherService.currentWeather[i].humidity} %"),
-                ],
-              )
-            ],
-          ));
+        leading: Image.network(WeatherService.iconUrl +
+            WeatherService.currentWeather[i].icon +
+            WeatherService.extension),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).day.toString()} "
+              "- ${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).month.toString()} "
+              "- ${DateTime.fromMillisecondsSinceEpoch(WeatherService.currentWeather[i].sunrise * 1000).year.toString()}",
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            Text(
+                "${WeatherService.currentWeather[i].mainWeather}, ${WeatherService.currentWeather[i].description}"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Temperature: ${WeatherService.currentWeather[i].temp}º"),
+                Text(
+                    "Humidity: ${WeatherService.currentWeather[i].humidity} %"),
+              ],
+            )
+          ],
+        ),
+        onTap: () {
+          Data.selectedWeather = WeatherService.currentWeather[i];
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (BuildContext context) => DetailedWeatherView()));
+        },
+      );
       data.add(aux);
       data.add(const Divider());
     }

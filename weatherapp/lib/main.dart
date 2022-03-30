@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/config.dart';
-import 'package:weatherapp/views/cities_view.dart';
+import 'package:weatherapp/view/cities_view.dart';
 
 void main() {
   runApp(const MyApp());
