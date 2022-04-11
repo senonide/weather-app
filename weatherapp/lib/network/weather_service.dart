@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:weatherapp/apikey.dart';
+import 'package:weatherapp/config.dart';
 import 'package:weatherapp/model/city_weather.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,7 @@ class WeatherService {
   static const String latParam = 'lat=';
   static const String longParam = 'lon=';
   static const String units = 'units=metric';
+  static const String lang = 'lang=';
   static const String apiKey = 'appid=${ApiKey.Key}';
 
   static const String iconUrl = 'http://openweathermap.org/img/wn/';
@@ -27,6 +29,9 @@ class WeatherService {
         long +
         '&' +
         units +
+        '&' +
+        lang +
+        Config.selectedLocale +
         '&' +
         apiKey;
 

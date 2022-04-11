@@ -18,7 +18,7 @@ class Data {
     City(name: 'Paris', lat: 48.85341, long: 2.3488),
     City(name: 'Rome', lat: 41.89193, long: 12.51133),
     City(name: 'London', lat: 51.51279, long: -0.09184),
-    City(name: 'Lisboa', lat: 38.71667, long: -9.13333),
+    City(name: 'Lisbon', lat: 38.71667, long: -9.13333),
     City(name: 'Athens', lat: 37.98376, long: 23.72784),
     City(name: 'Belgium', lat: 50.85045, long: 4.34878),
     City(name: 'Bern', lat: 46.94809, long: 7.44744),

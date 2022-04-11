@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/config.dart';
 import 'package:weatherapp/network/weather_service.dart';
 import 'package:weatherapp/repository/data.dart';
 
-class DetailedWeatherView extends StatelessWidget {
-  DetailedWeatherView({Key? key}) : super(key: key);
+class DetailedWeatherView extends StatefulWidget {
+  const DetailedWeatherView({Key? key}) : super(key: key);
 
-  final List<String> WeekDay = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
+  @override
+  State<DetailedWeatherView> createState() => _State();
+}
+
+class _State extends State<DetailedWeatherView> {
+  final List<String> weekDay = [
+    Config.locales.monday,
+    Config.locales.tuesday,
+    Config.locales.wednesday,
+    Config.locales.thursday,
+    Config.locales.friday,
+    Config.locales.saturday,
+    Config.locales.sunday
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +49,7 @@ class DetailedWeatherView extends StatelessWidget {
             ),
             Center(
               child: Text(
-                " - ${WeekDay[DateTime.fromMillisecondsSinceEpoch(Data.selectedWeather!.sunrise * 1000).weekday - 1]}"
+                " - ${weekDay[DateTime.fromMillisecondsSinceEpoch(Data.selectedWeather!.sunrise * 1000).weekday - 1]}"
                 "  ${DateTime.fromMillisecondsSinceEpoch(Data.selectedWeather!.sunrise * 1000).day.toString()} - ",
                 style: const TextStyle(
                     fontSize: 22, fontWeight: FontWeight.normal),
@@ -56,7 +67,7 @@ class DetailedWeatherView extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "${Data.selectedWeather!.mainWeather},\n${Data.selectedWeather!.description}",
+                      Data.selectedWeather!.description,
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -94,9 +105,9 @@ class DetailedWeatherView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text(
-                        "Humidity: ",
-                        style: TextStyle(
+                      Text(
+                        Config.locales.humidity + ": ",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -112,9 +123,9 @@ class DetailedWeatherView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
-                        "Pressure: ",
-                        style: TextStyle(
+                      Text(
+                        Config.locales.pressure + ": ",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -130,9 +141,9 @@ class DetailedWeatherView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
-                        "Temperature feels like: ",
-                        style: TextStyle(
+                      Text(
+                        Config.locales.temperatureFeelsLike + ": ",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -148,9 +159,9 @@ class DetailedWeatherView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
-                        "Wind speed: ",
-                        style: TextStyle(
+                      Text(
+                        Config.locales.windSpeed + ": ",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
