@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:weatherapp/config.dart';
 import 'package:weatherapp/views/cities_view.dart';
 
+/*
+Clase que se encarga de renderizar la vista que implementa las opciones de configuración
+*/
 class ConfigView extends StatefulWidget {
   const ConfigView({Key? key}) : super(key: key);
 

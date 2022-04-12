@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+/*
+Esta clase se encarga de la administración de la internacionalización de la aplicación
+*/
 class WeatherAppLocalizations {
   WeatherAppLocalizations(this.locale);
 
+  // Variable que guardará la localizacion actual para poder mostrar un idioma u otro
   Locale locale;
 
   static WeatherAppLocalizations? of(BuildContext context) {
@@ -10,7 +14,9 @@ class WeatherAppLocalizations {
         context, WeatherAppLocalizations);
   }
 
+  // Estructura de datos que almacena las cadenas traducidas para cada idioma
   static final Map<String, Map<String, String>> _localizedValues = {
+    // Inglés
     'en': {
       'title': 'Weather App',
       'config': 'Settings',
@@ -32,6 +38,7 @@ class WeatherAppLocalizations {
       'saturday': 'Saturday',
       'sunday': 'Sunday',
     },
+    // Español
     'es': {
       'title': 'Aplicación del tiempo',
       'config': 'Configuración',
@@ -54,6 +61,8 @@ class WeatherAppLocalizations {
       'sunday': 'Domingo',
     },
   };
+
+  // Funiciones para obtener la cadena en el idioma configurado
 
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;

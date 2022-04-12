@@ -1,9 +1,16 @@
 import 'package:weatherapp/model/city.dart';
 import 'package:weatherapp/model/city_weather.dart';
 
+/*
+Clase encargada de almacenar en memoria la lista de ciudades las cuales 
+se consultará el tiempo actual y el pronóstico para 7 días
+*/
 class Data {
+  // Ciudad seleccionada por el usuario
   static City? selectedCity;
+  // Dia de la semana seleccionado por el usuario para mostrar el tiempo
   static CityWeather? selectedWeather;
+  // Lista que almacena las ciudades en memoria
   static List<City> cities = [
     City(name: 'Oviedo', lat: 43.3603, long: -5.8448),
     City(name: 'Gijón', lat: 43.53573, long: -5.66152),

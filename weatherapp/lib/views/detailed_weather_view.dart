@@ -3,6 +3,10 @@ import 'package:weatherapp/config.dart';
 import 'package:weatherapp/network/weather_service.dart';
 import 'package:weatherapp/repository/data.dart';
 
+/*
+Clase que se encarga de renderizar la vista que implementa
+el tiempo de un dia en concreto de forma detallada
+*/
 class DetailedWeatherView extends StatefulWidget {
   const DetailedWeatherView({Key? key}) : super(key: key);
 

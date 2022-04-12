@@ -1,3 +1,6 @@
+/*
+Clase que se encarga de modelar una determinada ciudad
+*/
 class City {
   double lat;
   double long;

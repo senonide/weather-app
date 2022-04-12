@@ -4,6 +4,9 @@ import 'package:weatherapp/repository/data.dart';
 import 'package:weatherapp/views/config_view.dart';
 import 'package:weatherapp/views/weather_view.dart';
 
+/*
+Clase que se encarga de renderizar la vista que implementa la lista de ciudades a seleccionar
+*/
 class CitiesView extends StatefulWidget {
   const CitiesView({Key? key}) : super(key: key);
 

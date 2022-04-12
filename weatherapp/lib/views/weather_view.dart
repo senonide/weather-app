@@ -4,6 +4,10 @@ import 'package:weatherapp/repository/data.dart';
 import 'package:weatherapp/network/weather_service.dart';
 import 'package:weatherapp/views/detailed_weather_view.dart';
 
+/*
+Clase que se encarga de renderizar la vista que implementa 
+la lista dias de la semana para consultar el tiempo
+*/
 class WeatherView extends StatelessWidget {
   const WeatherView({Key? key}) : super(key: key);
 

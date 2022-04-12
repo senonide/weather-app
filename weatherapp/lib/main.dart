@@ -3,10 +3,16 @@ import 'package:weatherapp/config.dart';
 import 'package:weatherapp/views/cities_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+/*
+Punto de entrada
+*/
 void main() {
   runApp(const MyApp());
 }
 
+/*
+Clase principal de la App
+*/
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
   @override

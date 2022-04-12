@@ -1,19 +1,33 @@
+/*
+Clase que se encarga de modelar el tiempo que hace en una determinada ciudad
+*/
 class CityWeather {
+  // Latitud
   double lat;
+  // Longitud
   double long;
+  // Zona horaria
   String timezone = '';
 
+  // Fecha en formato unix del tiempo
   int dt;
+  // Fecha en formato unix del amanecer
   int sunrise;
+  // Fecha en formato unix del atardecer
   int sunset;
+  // Temperatura media real
   double temp;
+  // Temperatura aparente
   double feels_like;
   int pressure;
   int humidity;
   double wind_speed;
 
+  // Palabra que describe el tiempo del día
   String mainWeather = '';
+  // Descripcion corta del tiempo del día
   String description = '';
+  // Referencia al icono relacionado con el tiempo del día
   String icon = '';
 
   CityWeather({
@@ -33,6 +47,7 @@ class CityWeather {
     required this.icon,
   });
 
+  // Constructor a partir de un json, devuelve un objeto de tipo CityWeather
   factory CityWeather.fromJson(Map<String, dynamic> parsedJson) {
     return CityWeather(
         lat: parsedJson['lat'],
@@ -51,6 +66,7 @@ class CityWeather {
         icon: parsedJson['current']['weather'][0]['icon']);
   }
 
+  // Método que devuelve la lista del tiempo en los próximos 7 días a partir del json recibido desde la API
   static List<CityWeather> getForecast(Map<String, dynamic> parsedJson) {
     List<CityWeather> forecastData = [];
     for (int i = 0; i < 8; i++) {
