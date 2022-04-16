@@ -37,6 +37,24 @@ class WeatherAppLocalizations {
       'friday': 'Friday',
       'saturday': 'Saturday',
       'sunday': 'Sunday',
+      'oviedo': 'Oviedo',
+      'gijon': 'Gijón',
+      'madrid': 'Madrid',
+      'barcelona': 'Barcelona',
+      'valencia': 'Valencia',
+      'valladolid': 'Valladolid',
+      'cadiz': 'Cádiz',
+      'sevilla': 'Sevilla',
+      'bilbao': 'Bilbao',
+      'berlin': 'Berlin',
+      'paris': 'Paris',
+      'rome': 'Rome',
+      'london': 'London',
+      'lisbon': 'Lisbon',
+      'athens': 'Athens',
+      'belgium': 'Belgium',
+      'bern': 'Bern',
+      'vienna': 'Vienna',
     },
     // Español
     'es': {
@@ -59,6 +77,24 @@ class WeatherAppLocalizations {
       'friday': 'Viernes',
       'saturday': 'Sábado',
       'sunday': 'Domingo',
+      'oviedo': 'Oviedo',
+      'gijon': 'Gijón',
+      'madrid': 'Madrid',
+      'barcelona': 'Barcelona',
+      'valencia': 'Valencia',
+      'valladolid': 'Valladolid',
+      'cadiz': 'Cádiz',
+      'sevilla': 'Sevilla',
+      'bilbao': 'Bilbao',
+      'berlin': 'Berlin',
+      'paris': 'Paris',
+      'rome': 'Roma',
+      'london': 'Londres',
+      'lisbon': 'Lisboa',
+      'athens': 'Atenas',
+      'belgium': 'Bélgica',
+      'bern': 'Berna',
+      'vienna': 'Viena',
     },
   };
 
@@ -138,5 +174,77 @@ class WeatherAppLocalizations {
 
   String get sunday {
     return _localizedValues[locale.languageCode]!['sunday']!;
+  }
+
+  String get oviedo {
+    return _localizedValues[locale.languageCode]!['oviedo']!;
+  }
+
+  String get gijon {
+    return _localizedValues[locale.languageCode]!['gijon']!;
+  }
+
+  String get madrid {
+    return _localizedValues[locale.languageCode]!['madrid']!;
+  }
+
+  String get barcelona {
+    return _localizedValues[locale.languageCode]!['barcelona']!;
+  }
+
+  String get valencia {
+    return _localizedValues[locale.languageCode]!['valencia']!;
+  }
+
+  String get valladolid {
+    return _localizedValues[locale.languageCode]!['valladolid']!;
+  }
+
+  String get cadiz {
+    return _localizedValues[locale.languageCode]!['cadiz']!;
+  }
+
+  String get sevilla {
+    return _localizedValues[locale.languageCode]!['sevilla']!;
+  }
+
+  String get bilbao {
+    return _localizedValues[locale.languageCode]!['bilbao']!;
+  }
+
+  String get berlin {
+    return _localizedValues[locale.languageCode]!['berlin']!;
+  }
+
+  String get paris {
+    return _localizedValues[locale.languageCode]!['paris']!;
+  }
+
+  String get rome {
+    return _localizedValues[locale.languageCode]!['rome']!;
+  }
+
+  String get london {
+    return _localizedValues[locale.languageCode]!['london']!;
+  }
+
+  String get lisbon {
+    return _localizedValues[locale.languageCode]!['lisbon']!;
+  }
+
+  String get athens {
+    return _localizedValues[locale.languageCode]!['athens']!;
+  }
+
+  String get belgium {
+    return _localizedValues[locale.languageCode]!['belgium']!;
+  }
+
+  String get bern {
+    return _localizedValues[locale.languageCode]!['bern']!;
+  }
+
+  String get vienna {
+    return _localizedValues[locale.languageCode]!['vienna']!;
   }
 }
