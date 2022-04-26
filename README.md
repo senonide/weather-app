@@ -6,8 +6,9 @@ Application data is provided by [OpenWeather](https://openweathermap.org/)
 
 # Screenshots
 
-![Screenshot 1](Screenshot_1.png?raw=true)
+<img src="Screenshot_1.png" alt="Screenshot 1" width="300"/>
 
-![Screenshot 2](Screenshot_2.png?raw=true)
+<img src="Screenshot_2.png" alt="Screenshot 2" width="300"/>
 
-![Screenshot 3](Screenshot_3.png?raw=true)
+<img src="Screenshot_3.png" alt="Screenshot 3" width="300"/>
+
