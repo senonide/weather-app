@@ -5,7 +5,7 @@ import 'package:weatherapp/views/cities_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 /*
-Punto de entrada
+Punto de entrada de la aplicacion 
 */
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

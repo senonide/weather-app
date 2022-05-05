@@ -6,6 +6,7 @@ Clase encargada de almacenar en el dispositivo las preferencias del sistema
 class Preferences {
   static SharedPreferences? _prefs;
 
+  // Funcion que inicializa las preferencias
   static Future<SharedPreferences> getSharedPreferences() async {
     return await SharedPreferences.getInstance();
   }
@@ -26,6 +27,7 @@ class Preferences {
     return _prefs!.getInt('key');
   }
 
+  // Funcion que obtiene el idioma de las preferencias cargadas
   static String getLang(SharedPreferences preferences) {
     if (_prefs == null) {
       getSharedPreferences().then((value) => _prefs = value);
