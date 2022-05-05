@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:weatherapp/config.dart';
 import 'package:weatherapp/main.dart';
+import 'package:weatherapp/settings_controller.dart';
 
 import 'package:weatherapp/views/cities_view.dart';
 import 'package:weatherapp/views/config_view.dart';
@@ -14,7 +15,12 @@ Función para la realización de pruebas
 void main() {
   testWidgets('All widgets in the app', (WidgetTester tester) async {
     // CitiesView ----------------------------------
-    await tester.pumpWidget(const MyApp());
+    WidgetsFlutterBinding.ensureInitialized();
+    final settingsController = SettingsController();
+    await settingsController.loadSettings();
+    await tester.pumpWidget(MyApp(
+      settingsController: settingsController,
+    ));
 
     expect(find.text(Config.locales.athens), findsOneWidget);
     expect(find.text(Config.locales.barcelona), findsOneWidget);
